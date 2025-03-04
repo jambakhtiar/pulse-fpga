@@ -1,0 +1,449 @@
+Release 14.7 - xst P.20131013 (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> 
+Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.05 secs
+ 
+--> 
+Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.05 secs
+ 
+--> 
+Reading design: TOP.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "TOP.prj"
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "TOP"
+Output Format                      : NGC
+Target Device                      : xc6slx9-3-csg324
+
+---- Source Options
+Top Module Name                    : TOP
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Shift Register Extraction          : YES
+ROM Style                          : Auto
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Shift Register Minimum Size        : 2
+Use DSP Block                      : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+LUT Combining                      : Auto
+Reduce Control Sets                : Auto
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 16
+Register Duplication               : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Power Reduction                    : NO
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+DSP48 Utilization Ratio            : 100
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Parsing VHDL file "/home/jam/Downloads/pulse_project/vhdl_additional/pack_exam.vhd" into library work
+Parsing package <pack_exam>.
+Parsing package body <pack_exam>.
+Parsing VHDL file "/home/jam/Downloads/pulse_project/vhdl_additional/pulse.vhd" into library work
+Parsing entity <PULSE>.
+Parsing architecture <ARCH_1> of entity <pulse>.
+Parsing architecture <ARCH_2> of entity <pulse>.
+Parsing VHDL file "/home/jam/Downloads/pulse_project/vhdl_additional/top.vhd" into library work
+Parsing entity <TOP>.
+Parsing architecture <ARCH> of entity <top>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating entity <TOP> (architecture <ARCH>) from library <work>.
+
+Elaborating entity <PULSE> (architecture <ARCH_2>) with generics from library <work>.
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <TOP>.
+    Related source file is "/home/jam/Downloads/pulse_project/vhdl_additional/top.vhd".
+    Summary:
+	no macro.
+Unit <TOP> synthesized.
+
+Synthesizing Unit <PULSE>.
+    Related source file is "/home/jam/Downloads/pulse_project/vhdl_additional/pulse.vhd".
+        N_PULSE = 10000000
+    Found 1-bit register for signal <finished>.
+    Found 24-bit register for signal <cnt>.
+    Found 1-bit register for signal <started>.
+    Found 24-bit adder for signal <_n0024> created at line 61.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  26 D-type flip-flop(s).
+Unit <PULSE> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 1
+ 24-bit adder                                          : 1
+# Registers                                            : 3
+ 1-bit register                                        : 2
+ 24-bit register                                       : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+
+Synthesizing (advanced) Unit <PULSE>.
+The following registers are absorbed into counter <cnt>: 1 register on signal <cnt>.
+Unit <PULSE> synthesized (advanced).
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 1
+ 24-bit adder                                          : 1
+# Counters                                             : 1
+ 24-bit up counter                                     : 1
+# Registers                                            : 2
+ Flip-Flops                                            : 2
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+
+Optimizing unit <TOP> ...
+
+Optimizing unit <PULSE> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block TOP, actual ratio is 1.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 26
+ Flip-Flops                                            : 26
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : TOP.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+# BELS                             : 157
+#      GND                         : 1
+#      INV                         : 2
+#      LUT1                        : 46
+#      LUT2                        : 3
+#      LUT3                        : 1
+#      LUT4                        : 2
+#      LUT5                        : 2
+#      LUT6                        : 5
+#      MUXCY                       : 46
+#      VCC                         : 1
+#      XORCY                       : 48
+# FlipFlops/Latches                : 26
+#      FDR                         : 26
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 3
+#      IBUF                        : 2
+#      OBUF                        : 1
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 6slx9csg324-3 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:              26  out of  11440     0%  
+ Number of Slice LUTs:                   61  out of   5720     1%  
+    Number used as Logic:                61  out of   5720     1%  
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:     61
+   Number with an unused Flip Flop:      35  out of     61    57%  
+   Number with an unused LUT:             0  out of     61     0%  
+   Number of fully used LUT-FF pairs:    26  out of     61    42%  
+   Number of unique control sets:         2
+
+IO Utilization: 
+ Number of IOs:                           4
+ Number of bonded IOBs:                   4  out of    200     2%  
+
+Specific Feature Utilization:
+ Number of BUFG/BUFGCTRLs:                1  out of     16     6%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+fpga_clk                           | BUFGP                  | 26    |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -3
+
+   Minimum period: 4.105ns (Maximum Frequency: 243.585MHz)
+   Minimum input arrival time before clock: 4.002ns
+   Maximum output required time after clock: 8.072ns
+   Maximum combinational path delay: 5.424ns
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'fpga_clk'
+  Clock period: 4.105ns (frequency: 243.585MHz)
+  Total number of paths / destination ports: 952 / 50
+-------------------------------------------------------------------------
+Delay:               4.105ns (Levels of Logic = 14)
+  Source:            i0/cnt_0 (FF)
+  Destination:       i0/started (FF)
+  Source Clock:      fpga_clk rising
+  Destination Clock: fpga_clk rising
+
+  Data Path: i0/cnt_0 to i0/started
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDR:C->Q              2   0.447   0.616  i0/cnt_0 (i0/cnt_0)
+     INV:I->O              1   0.206   0.000  i0/Madd__n0024_lut<0>_INV_0 (i0/Madd__n0024_lut<0>)
+     MUXCY:S->O            1   0.172   0.000  i0/Madd__n0024_cy<0> (i0/Madd__n0024_cy<0>)
+     MUXCY:CI->O           1   0.019   0.000  i0/Madd__n0024_cy<1> (i0/Madd__n0024_cy<1>)
+     MUXCY:CI->O           1   0.019   0.000  i0/Madd__n0024_cy<2> (i0/Madd__n0024_cy<2>)
+     MUXCY:CI->O           1   0.019   0.000  i0/Madd__n0024_cy<3> (i0/Madd__n0024_cy<3>)
+     MUXCY:CI->O           1   0.019   0.000  i0/Madd__n0024_cy<4> (i0/Madd__n0024_cy<4>)
+     MUXCY:CI->O           1   0.019   0.000  i0/Madd__n0024_cy<5> (i0/Madd__n0024_cy<5>)
+     MUXCY:CI->O           1   0.019   0.000  i0/Madd__n0024_cy<6> (i0/Madd__n0024_cy<6>)
+     MUXCY:CI->O           1   0.019   0.000  i0/Madd__n0024_cy<7> (i0/Madd__n0024_cy<7>)
+     MUXCY:CI->O           1   0.019   0.000  i0/Madd__n0024_cy<8> (i0/Madd__n0024_cy<8>)
+     MUXCY:CI->O           1   0.019   0.000  i0/Madd__n0024_cy<9> (i0/Madd__n0024_cy<9>)
+     XORCY:CI->O           1   0.180   0.924  i0/Madd__n0024_xor<10> (i0/_n0024<13>)
+     LUT5:I0->O            3   0.203   0.879  i0/_n0042<0>7_SW0 (N2)
+     LUT6:I3->O            1   0.205   0.000  i0/finished_glue_set (i0/finished_glue_set)
+     FDR:D                     0.102          i0/finished
+    ----------------------------------------
+    Total                      4.105ns (1.686ns logic, 2.419ns route)
+                                       (41.1% logic, 58.9% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'fpga_clk'
+  Total number of paths / destination ports: 30 / 28
+-------------------------------------------------------------------------
+Offset:              4.002ns (Levels of Logic = 2)
+  Source:            switch (PAD)
+  Destination:       i0/cnt_0 (FF)
+  Destination Clock: fpga_clk rising
+
+  Data Path: switch to i0/cnt_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             6   1.222   0.973  switch_IBUF (switch_IBUF)
+     LUT3:I0->O           24   0.205   1.172  i0/Mcount_cnt_val241 (i0/Mcount_cnt_val)
+     FDR:R                     0.430          i0/cnt_0
+    ----------------------------------------
+    Total                      4.002ns (1.857ns logic, 2.145ns route)
+                                       (46.4% logic, 53.6% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'fpga_clk'
+  Total number of paths / destination ports: 300 / 1
+-------------------------------------------------------------------------
+Offset:              8.072ns (Levels of Logic = 16)
+  Source:            i0/cnt_0 (FF)
+  Destination:       led (PAD)
+  Source Clock:      fpga_clk rising
+
+  Data Path: i0/cnt_0 to led
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDR:C->Q              2   0.447   0.616  i0/cnt_0 (i0/cnt_0)
+     INV:I->O              1   0.206   0.000  i0/Madd__n0024_lut<0>_INV_0 (i0/Madd__n0024_lut<0>)
+     MUXCY:S->O            1   0.172   0.000  i0/Madd__n0024_cy<0> (i0/Madd__n0024_cy<0>)
+     MUXCY:CI->O           1   0.019   0.000  i0/Madd__n0024_cy<1> (i0/Madd__n0024_cy<1>)
+     MUXCY:CI->O           1   0.019   0.000  i0/Madd__n0024_cy<2> (i0/Madd__n0024_cy<2>)
+     MUXCY:CI->O           1   0.019   0.000  i0/Madd__n0024_cy<3> (i0/Madd__n0024_cy<3>)
+     MUXCY:CI->O           1   0.019   0.000  i0/Madd__n0024_cy<4> (i0/Madd__n0024_cy<4>)
+     MUXCY:CI->O           1   0.019   0.000  i0/Madd__n0024_cy<5> (i0/Madd__n0024_cy<5>)
+     MUXCY:CI->O           1   0.019   0.000  i0/Madd__n0024_cy<6> (i0/Madd__n0024_cy<6>)
+     MUXCY:CI->O           1   0.019   0.000  i0/Madd__n0024_cy<7> (i0/Madd__n0024_cy<7>)
+     MUXCY:CI->O           1   0.019   0.000  i0/Madd__n0024_cy<8> (i0/Madd__n0024_cy<8>)
+     MUXCY:CI->O           1   0.019   0.000  i0/Madd__n0024_cy<9> (i0/Madd__n0024_cy<9>)
+     XORCY:CI->O           1   0.180   0.924  i0/Madd__n0024_xor<10> (i0/_n0024<13>)
+     LUT5:I0->O            3   0.203   1.015  i0/_n0042<0>7_SW0 (N2)
+     LUT6:I0->O            1   0.203   0.580  i0/_n0042<0>7 (i0/_n0042)
+     LUT2:I1->O            1   0.205   0.579  i0/o1 (led_OBUF)
+     OBUF:I->O                 2.571          led_OBUF (led)
+    ----------------------------------------
+    Total                      8.072ns (4.358ns logic, 3.714ns route)
+                                       (54.0% logic, 46.0% route)
+
+=========================================================================
+Timing constraint: Default path analysis
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Delay:               5.424ns (Levels of Logic = 3)
+  Source:            switch (PAD)
+  Destination:       led (PAD)
+
+  Data Path: switch to led
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             6   1.222   0.849  switch_IBUF (switch_IBUF)
+     LUT2:I0->O            1   0.203   0.579  i0/o1 (led_OBUF)
+     OBUF:I->O                 2.571          led_OBUF (led)
+    ----------------------------------------
+    Total                      5.424ns (3.996ns logic, 1.428ns route)
+                                       (73.7% logic, 26.3% route)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+Clock to Setup on destination clock fpga_clk
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+fpga_clk       |    4.105|         |         |         |
+---------------+---------+---------+---------+---------+
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 4.00 secs
+Total CPU time to Xst completion: 3.68 secs
+ 
+--> 
+
+
+Total memory usage is 376800 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :    0 (   0 filtered)
+Number of infos    :    0 (   0 filtered)
+

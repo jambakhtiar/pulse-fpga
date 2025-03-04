@@ -1,0 +1,8 @@
+NET fpga_clk TNM_NET = clk_net;
+TIMESPEC TS_clk_net = PERIOD clk_net 100 MHz;	
+
+NET fpga_clk 				LOC=C10;	#100MHz clock input				
+NET fpga_rst 				LOC=V4;		#USER PUSH-BUTTON
+
+NET switch					LOC=		#Any of the SWITCHES of the LX9 MICROBOARD
+NET led 					LOC=		#ANy of the LEDS of the LX9 MICROBOARD

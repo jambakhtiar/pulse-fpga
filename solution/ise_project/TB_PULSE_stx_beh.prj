@@ -1,0 +1,2 @@
+vhdl isim_temp "../../vhdl_additional/pack_exam.vhd"
+vhdl isim_temp "../../vhdl_additional/pulse.vhd"

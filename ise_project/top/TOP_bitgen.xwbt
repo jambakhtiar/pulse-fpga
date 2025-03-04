@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=/home/jam/Downloads/pulse_project/ise_project/top/TOP.ncd
+OUTFILE=/home/jam/Downloads/pulse_project/ise_project/top/TOP.bit
+FAMILY=Spartan6
+PART=xc6slx9-3csg324
+WORKINGDIR=/home/jam/Downloads/pulse_project/ise_project/top
+LICENSE=WebPack
+USER_INFO=__0_0_0

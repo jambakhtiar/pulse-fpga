@@ -1,0 +1,19 @@
+//! **************************************************************************
+// Written by: Map P.20131013 on Thu Jun 13 16:32:34 2024
+//! **************************************************************************
+
+SCHEMATIC START;
+COMP "switch" LOCATE = SITE "B3" LEVEL 1;
+COMP "led" LOCATE = SITE "D2" LEVEL 1;
+COMP "fpga_rst" LOCATE = SITE "V4" LEVEL 1;
+COMP "fpga_clk" LOCATE = SITE "C10" LEVEL 1;
+TIMEGRP clk_net = BEL "i0/cnt_0" BEL "i0/cnt_22" BEL "i0/cnt_21" BEL
+        "i0/cnt_23" BEL "i0/cnt_19" BEL "i0/cnt_18" BEL "i0/cnt_20" BEL
+        "i0/cnt_16" BEL "i0/cnt_15" BEL "i0/cnt_17" BEL "i0/cnt_14" BEL
+        "i0/cnt_13" BEL "i0/cnt_12" BEL "i0/cnt_11" BEL "i0/cnt_9" BEL
+        "i0/cnt_8" BEL "i0/cnt_10" BEL "i0/cnt_6" BEL "i0/cnt_5" BEL
+        "i0/cnt_7" BEL "i0/cnt_3" BEL "i0/cnt_2" BEL "i0/cnt_4" BEL "i0/cnt_1"
+        BEL "i0/started" BEL "i0/finished" BEL "fpga_clk_BUFGP/BUFG";
+TS_clk_net = PERIOD TIMEGRP "clk_net" 100 MHz HIGH 50%;
+SCHEMATIC END;
+

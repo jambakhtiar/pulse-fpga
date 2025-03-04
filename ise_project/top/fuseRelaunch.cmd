@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -lib "secureip" -o "/home/jam/Downloads/pulse_project/ise_project/top/TB_PULSE_isim_beh.exe" -prj "/home/jam/Downloads/pulse_project/ise_project/top/TB_PULSE_beh.prj" "work.TB_PULSE" 
